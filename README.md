@@ -8,6 +8,6 @@ Executing the plugin at the specified URL will allow the server to set cookies o
 ```
 document.addEventListener('deviceready', () => {
   const args = ['GET', 'https://my.site.com'];
-  cordova.exec('WKWebViewSync', 'sync', args);
+  cordova.exec(null, null, 'WKWebViewSyncCookies', 'sync', args);
 });
 ```
