@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-wkwebview-sync-cookies" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+  <name>WKWebViewCookieSync</name>
+  <platform name="ios">
+    <config-file target="config.xml" parent="/*">
+      <feature name="WKWebViewSyncCookies">
+        <param name="ios-package" value="WKWebViewSyncCookies" />
+      </feature>
+    </config-file>
+    <header-file src="src/WKWebViewSyncCookies.h" />
+    <source-file src="src/WKWebViewSyncCookies.m" />
+  </platform>
+</plugin>
