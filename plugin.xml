@@ -7,6 +7,9 @@
         <param name="ios-package" value="WKWebViewSyncCookies" />
       </feature>
     </config-file>
+    <js-module src="www/cookiesync.js" name="cookiesync">
+      <clobbers target="wkWebView" />
+    </js-module>
     <header-file src="src/WKWebViewSyncCookies.h" />
     <source-file src="src/WKWebViewSyncCookies.m" />
   </platform>
