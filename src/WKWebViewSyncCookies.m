@@ -1,3 +1,8 @@
+/*
+Copyright 2017 Dennis Torres
+Thanks to @CWBudde for iOS 11 fixes.
+*/
+
 #import "WKWebViewSyncCookies.h"
 #import <Cordova/CDV.h>
 
@@ -8,7 +13,7 @@
   if (@available(iOS 11.0, *)) {
     NSString *domain = command.arguments[2];
     NSString *path = command.arguments[3];
-    
+
     NSMutableDictionary *cookieProperties = [NSMutableDictionary dictionary];
     [cookieProperties setObject:@"foo" forKey:NSHTTPCookieName];
     [cookieProperties setObject:@"bar" forKey:NSHTTPCookieValue];
