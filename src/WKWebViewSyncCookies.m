@@ -4,13 +4,15 @@ Thanks to @CWBudde for iOS 11 fixes.
 */
 
 #import "WKWebViewSyncCookies.h"
+#import <WebKit/WebKit.h>
 #import <Cordova/CDV.h>
 
 @implementation WKWebViewSyncCookies
 
 - (void)sync:(CDVInvokedUrlCommand *)command {
-  WKWebView* wkWebView = (WKWebView*) self.webView;
+
   if (@available(iOS 11.0, *)) {
+    WKWebView* wkWebView = (WKWebView*) self.webView;
     NSString *domain = command.arguments[2];
     NSString *path = command.arguments[3];
 
@@ -25,7 +27,7 @@ Thanks to @CWBudde for iOS 11 fixes.
     [wkWebView.configuration.websiteDataStore.httpCookieStore setCookie:cookie completionHandler:^{NSLog(@"Cookies synced");}];
 
     CDVPluginResult *pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
-    [self.commandDelegate sendPluginResult:pluginResult callbackId:self.callbackId];
+    [self.commandDelegate sendPluginResult:pluginResult callbackId: command.callbackId];
   } else {
     @try {
       NSString *urlHttpMethod = command.arguments[0];
