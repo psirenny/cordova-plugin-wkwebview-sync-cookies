@@ -24,7 +24,7 @@ Thanks to @CWBudde for iOS 11 fixes.
     [cookieProperties setObject:path forKey:NSHTTPCookiePath];
     NSHTTPCookie * cookie = [NSHTTPCookie cookieWithProperties:cookieProperties];
 
-    [wkWebView.configuration.websiteDataStore.httpCookieStore setCookie:cookie completionHandler:^{NSLog(@"Cookies synced");}];
+    [wkWebView.configuration.websiteDataStore.httpCookieStore setCookie:cookie];
 
     CDVPluginResult *pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
     [self.commandDelegate sendPluginResult:pluginResult callbackId: command.callbackId];
